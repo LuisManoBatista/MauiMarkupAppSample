@@ -6,7 +6,7 @@ public static class ProgressBarStyle
     {
         Setters =
         {
-            ApplicationStylesDictionary.AppThemeSetter(ProgressBar.ProgressColorProperty, ApplicationColorsDictionary.Primary, ApplicationColorsDictionary.White),
+            ApplicationStylesDictionary.AppThemeBinding(ProgressBar.ProgressColorProperty, ApplicationColorsDictionary.Primary, ApplicationColorsDictionary.White),
             new Setter
             {
                 Property = VisualStateManager.VisualStateGroupsProperty,
@@ -21,7 +21,7 @@ public static class ProgressBarStyle
                             new VisualState
                             {
                                 Name = "Disabled",
-                                Setters = { ApplicationStylesDictionary.AppThemeSetter(ProgressBar.ProgressColorProperty, ApplicationColorsDictionary.Gray300, ApplicationColorsDictionary.Gray600) }
+                                Setters = { ApplicationStylesDictionary.AppThemeBinding(ProgressBar.ProgressColorProperty, ApplicationColorsDictionary.Gray300, ApplicationColorsDictionary.Gray600) }
                             }
                         }
                     }

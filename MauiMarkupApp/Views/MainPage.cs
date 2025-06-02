@@ -1,13 +1,15 @@
 ﻿using CommunityToolkit.Maui.Markup;
 using MauiMarkupApp.Resources.Styles;
+using MauiMarkupApp.ViewModels;
+using MauiMarkupApp.Views.Base;
 
-namespace MauiMarkupApp;
+namespace MauiMarkupApp.Views;
 
-public partial class MainPage : ContentPage
+public partial class MainPage : ContentPageBase<MainViewModel>
 {
     private int count = 0;
     
-    public MainPage()
+    public MainPage(MainViewModel viewModel ) : base( viewModel )
     {
 
         Content = new ScrollView 
@@ -27,6 +29,7 @@ public partial class MainPage : ContentPage
                     new Label()
                         .Text( "Hello, World!")
                         .Style(HeadlineStyle.Create())
+                        .AppThemeBinding(Label.TextColorProperty, ApplicationColorsDictionary.Black, ApplicationColorsDictionary.PrimaryDark)
                         .SemanticHeadingLevel(SemanticHeadingLevel.Level1),
 
                     new Label()
@@ -37,6 +40,7 @@ public partial class MainPage : ContentPage
 
                     new Button()
                         .Text("Click me")
+                        .IsEnabled(false)
                         .FillHorizontal()
                         .SemanticHint("Counts the number of times you click")
                         .Invoke( btn => btn.Clicked += (sender, e) => OnCounterClicked(sender, e))

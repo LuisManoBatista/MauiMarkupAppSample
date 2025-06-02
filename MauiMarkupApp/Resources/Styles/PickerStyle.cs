@@ -6,8 +6,8 @@ public static class PickerStyle
     {
         Setters =
         {
-            ApplicationStylesDictionary.AppThemeSetter(Picker.TextColorProperty, ApplicationColorsDictionary.Gray900, ApplicationColorsDictionary.White),
-            ApplicationStylesDictionary.AppThemeSetter(Picker.TitleColorProperty, ApplicationColorsDictionary.Gray900, ApplicationColorsDictionary.Gray200),
+            ApplicationStylesDictionary.AppThemeBinding(Picker.TextColorProperty, ApplicationColorsDictionary.Gray900, ApplicationColorsDictionary.White),
+            ApplicationStylesDictionary.AppThemeBinding(Picker.TitleColorProperty, ApplicationColorsDictionary.Gray900, ApplicationColorsDictionary.Gray200),
             ApplicationStylesDictionary.SimpleSetter(VisualElement.BackgroundColorProperty, ApplicationColorsDictionary.Transparent),
             ApplicationStylesDictionary.SimpleSetter(Picker.FontFamilyProperty, "OpenSansRegular"),
             ApplicationStylesDictionary.SimpleSetter(Picker.FontSizeProperty, 14),
@@ -29,8 +29,8 @@ public static class PickerStyle
                                 Name = "Disabled",
                                 Setters =
                                 {
-                                    ApplicationStylesDictionary.AppThemeSetter(Picker.TextColorProperty, ApplicationColorsDictionary.Gray300, ApplicationColorsDictionary.Gray600),
-                                    ApplicationStylesDictionary.AppThemeSetter(Picker.TitleColorProperty, ApplicationColorsDictionary.Gray300, ApplicationColorsDictionary.Gray600)
+                                    ApplicationStylesDictionary.AppThemeBinding(Picker.TextColorProperty, ApplicationColorsDictionary.Gray300, ApplicationColorsDictionary.Gray600),
+                                    ApplicationStylesDictionary.AppThemeBinding(Picker.TitleColorProperty, ApplicationColorsDictionary.Gray300, ApplicationColorsDictionary.Gray600)
                                 }
                             }
                         }

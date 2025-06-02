@@ -1,4 +1,6 @@
-﻿namespace MauiMarkupApp;
+﻿using MauiMarkupApp.Views;
+
+namespace MauiMarkupApp;
 
 public partial class AppShell : Shell
 {
@@ -9,7 +11,7 @@ public partial class AppShell : Shell
         var mainPage = new ShellContent
         {
             Title = "Home",
-            ContentTemplate = new DataTemplate(() => serviceProvider.GetRequiredService<MainPage>()),
+            ContentTemplate = new DataTemplate(serviceProvider.GetRequiredService<MainPage>),
             Route = "MainPage"
         };
 

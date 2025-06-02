@@ -7,7 +7,7 @@ public static class PageStyle
         Setters =
         {
             ApplicationStylesDictionary.SimpleSetter(Page.PaddingProperty, 0),
-            ApplicationStylesDictionary.AppThemeSetter(VisualElement.BackgroundColorProperty, ApplicationColorsDictionary.White, ApplicationColorsDictionary.OffBlack)
+            ApplicationStylesDictionary.AppThemeBinding(VisualElement.BackgroundColorProperty, ApplicationColorsDictionary.White, ApplicationColorsDictionary.OffBlack)
         },
         ApplyToDerivedTypes = true
     };

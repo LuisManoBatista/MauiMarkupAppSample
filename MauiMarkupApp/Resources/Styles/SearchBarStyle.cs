@@ -6,7 +6,7 @@ public static class SearchBarStyle
     {
         Setters =
         {
-            ApplicationStylesDictionary.AppThemeSetter(SearchBar.TextColorProperty, ApplicationColorsDictionary.Gray900, ApplicationColorsDictionary.White),
+            ApplicationStylesDictionary.AppThemeBinding(SearchBar.TextColorProperty, ApplicationColorsDictionary.Gray900, ApplicationColorsDictionary.White),
             ApplicationStylesDictionary.SimpleSetter(SearchBar.PlaceholderColorProperty, ApplicationColorsDictionary.Gray500),
             ApplicationStylesDictionary.SimpleSetter(SearchBar.CancelButtonColorProperty, ApplicationColorsDictionary.Gray500),
             ApplicationStylesDictionary.SimpleSetter(VisualElement.BackgroundColorProperty, ApplicationColorsDictionary.Transparent),
@@ -30,8 +30,8 @@ public static class SearchBarStyle
                                 Name = "Disabled",
                                 Setters =
                                 {
-                                    ApplicationStylesDictionary.AppThemeSetter(SearchBar.TextColorProperty, ApplicationColorsDictionary.Gray300, ApplicationColorsDictionary.Gray600),
-                                    ApplicationStylesDictionary.AppThemeSetter(SearchBar.PlaceholderColorProperty, ApplicationColorsDictionary.Gray300, ApplicationColorsDictionary.Gray600)
+                                    ApplicationStylesDictionary.AppThemeBinding(SearchBar.TextColorProperty, ApplicationColorsDictionary.Gray300, ApplicationColorsDictionary.Gray600),
+                                    ApplicationStylesDictionary.AppThemeBinding(SearchBar.PlaceholderColorProperty, ApplicationColorsDictionary.Gray300, ApplicationColorsDictionary.Gray600)
                                 }
                             }
                         }

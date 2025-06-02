@@ -6,8 +6,8 @@ public static class IndicatorViewStyle
     {
         Setters =
         {
-            ApplicationStylesDictionary.AppThemeSetter(IndicatorView.IndicatorColorProperty, ApplicationColorsDictionary.Gray200, ApplicationColorsDictionary.Gray500),
-            ApplicationStylesDictionary.AppThemeSetter(IndicatorView.SelectedIndicatorColorProperty, ApplicationColorsDictionary.Gray950, ApplicationColorsDictionary.Gray100)
+            ApplicationStylesDictionary.AppThemeBinding(IndicatorView.IndicatorColorProperty, ApplicationColorsDictionary.Gray200, ApplicationColorsDictionary.Gray500),
+            ApplicationStylesDictionary.AppThemeBinding(IndicatorView.SelectedIndicatorColorProperty, ApplicationColorsDictionary.Gray950, ApplicationColorsDictionary.Gray100)
         }
     };
 }

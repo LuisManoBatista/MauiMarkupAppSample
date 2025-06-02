@@ -1,6 +1,8 @@
 ﻿using CommunityToolkit.Maui;
 using CommunityToolkit.Maui.Markup;
 using Microsoft.Extensions.Logging;
+using MauiMarkupApp.Views;
+using MauiMarkupApp.ViewModels;
 
 namespace MauiMarkupApp
 {
@@ -20,7 +22,7 @@ namespace MauiMarkupApp
                 })
                 .Services
                     .AddSingleton<AppShell>()
-                    .AddSingleton<MainPage>();
+                    .AddSingleton<MainPage, MainViewModel>();
 
 #if DEBUG
     		builder.Logging.AddDebug();

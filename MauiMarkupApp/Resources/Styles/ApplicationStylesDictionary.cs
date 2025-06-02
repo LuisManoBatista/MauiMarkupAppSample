@@ -46,10 +46,10 @@ public partial class ApplicationStylesDictionary : ResourceDictionary
         Add(TabbedPageStyle.Create());
     }
 
-    public static Setter AppThemeSetter(BindableProperty property, Color lightColor, Color darkColor) =>
-        new(){ Property = property, Value = AppThemeColorBindingBase(lightColor, darkColor) };
+    public static Setter AppThemeBinding(BindableProperty property, Color lightColor, Color darkColor) =>
+        new(){ Property = property, Value = AppThemeBindingBase(lightColor, darkColor) };
 
-    private static BindingBase AppThemeColorBindingBase(Color lightColor, Color darkColor) =>
+    private static BindingBase AppThemeBindingBase(Color lightColor, Color darkColor) =>
         new AppThemeColor { Light = lightColor, Dark = darkColor }.GetBinding();
 
     public static Setter SimpleSetter(BindableProperty property, object value) =>

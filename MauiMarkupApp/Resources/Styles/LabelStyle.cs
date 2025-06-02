@@ -6,7 +6,7 @@ public static class LabelStyle
     {
         Setters =
         {
-            ApplicationStylesDictionary.AppThemeSetter(Label.TextColorProperty, ApplicationColorsDictionary.Black, ApplicationColorsDictionary.White),
+            ApplicationStylesDictionary.AppThemeBinding(Label.TextColorProperty, ApplicationColorsDictionary.Black, ApplicationColorsDictionary.White),
             ApplicationStylesDictionary.SimpleSetter(VisualElement.BackgroundColorProperty, ApplicationColorsDictionary.Transparent),
             ApplicationStylesDictionary.SimpleSetter(Label.FontFamilyProperty, "OpenSansRegular"),
             ApplicationStylesDictionary.SimpleSetter(Label.FontSizeProperty, 14),
@@ -26,7 +26,7 @@ public static class LabelStyle
                                 Name = "Disabled",
                                 Setters =
                                 {
-                                    ApplicationStylesDictionary.AppThemeSetter(Label.TextColorProperty, ApplicationColorsDictionary.Gray300, ApplicationColorsDictionary.Gray600)
+                                    ApplicationStylesDictionary.AppThemeBinding(Label.TextColorProperty, ApplicationColorsDictionary.Gray300, ApplicationColorsDictionary.Gray600)
                                 }
                             }
                         }

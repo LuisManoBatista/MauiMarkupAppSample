@@ -8,7 +8,7 @@ public static class ShadowStyle
         {
             ApplicationStylesDictionary.SimpleSetter(Shadow.RadiusProperty, 15),
             ApplicationStylesDictionary.SimpleSetter(Shadow.OpacityProperty, 0.5),
-            ApplicationStylesDictionary.AppThemeSetter(Shadow.BrushProperty, ApplicationColorsDictionary.White, ApplicationColorsDictionary.White),
+            ApplicationStylesDictionary.AppThemeBinding(Shadow.BrushProperty, ApplicationColorsDictionary.White, ApplicationColorsDictionary.White),
             ApplicationStylesDictionary.SimpleSetter(Shadow.OffsetProperty, new Microsoft.Maui.Graphics.Point(10, 10))
         }
     };

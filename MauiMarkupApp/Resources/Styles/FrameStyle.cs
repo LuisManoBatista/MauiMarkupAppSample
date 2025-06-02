@@ -8,9 +8,9 @@ public static class FrameStyle
         Setters =
         {
             ApplicationStylesDictionary.SimpleSetter(Frame.HasShadowProperty, false),
-            ApplicationStylesDictionary.AppThemeSetter(Frame.BorderColorProperty, ApplicationColorsDictionary.Gray200, ApplicationColorsDictionary.Gray950),
+            ApplicationStylesDictionary.AppThemeBinding(Frame.BorderColorProperty, ApplicationColorsDictionary.Gray200, ApplicationColorsDictionary.Gray950),
             ApplicationStylesDictionary.SimpleSetter(Frame.CornerRadiusProperty, 8),
-            ApplicationStylesDictionary.AppThemeSetter(VisualElement.BackgroundColorProperty, ApplicationColorsDictionary.White, ApplicationColorsDictionary.Black)
+            ApplicationStylesDictionary.AppThemeBinding(VisualElement.BackgroundColorProperty, ApplicationColorsDictionary.White, ApplicationColorsDictionary.Black)
         }
     };
 }

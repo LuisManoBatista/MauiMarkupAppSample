@@ -6,7 +6,7 @@ public static class SwitchStyle
     {
         Setters =
         {
-            ApplicationStylesDictionary.AppThemeSetter(Switch.OnColorProperty, ApplicationColorsDictionary.Primary, ApplicationColorsDictionary.White),
+            ApplicationStylesDictionary.AppThemeBinding(Switch.OnColorProperty, ApplicationColorsDictionary.Primary, ApplicationColorsDictionary.White),
             ApplicationStylesDictionary.SimpleSetter(Switch.ThumbColorProperty, ApplicationColorsDictionary.White),
             new Setter
             {
@@ -24,8 +24,8 @@ public static class SwitchStyle
                                 Name = "Disabled",
                                 Setters =
                                 {
-                                    ApplicationStylesDictionary.AppThemeSetter(Switch.OnColorProperty, ApplicationColorsDictionary.Gray300, ApplicationColorsDictionary.Gray600),
-                                    ApplicationStylesDictionary.AppThemeSetter(Switch.ThumbColorProperty, ApplicationColorsDictionary.Gray300, ApplicationColorsDictionary.Gray600)
+                                    ApplicationStylesDictionary.AppThemeBinding(Switch.OnColorProperty, ApplicationColorsDictionary.Gray300, ApplicationColorsDictionary.Gray600),
+                                    ApplicationStylesDictionary.AppThemeBinding(Switch.ThumbColorProperty, ApplicationColorsDictionary.Gray300, ApplicationColorsDictionary.Gray600)
                                 }
                             },
                             new VisualState
@@ -33,14 +33,14 @@ public static class SwitchStyle
                                 Name = "On",
                                 Setters =
                                 {
-                                    ApplicationStylesDictionary.AppThemeSetter(Switch.OnColorProperty, ApplicationColorsDictionary.Secondary, ApplicationColorsDictionary.Gray200),
-                                    ApplicationStylesDictionary.AppThemeSetter(Switch.ThumbColorProperty, ApplicationColorsDictionary.Primary, ApplicationColorsDictionary.White)
+                                    ApplicationStylesDictionary.AppThemeBinding(Switch.OnColorProperty, ApplicationColorsDictionary.Secondary, ApplicationColorsDictionary.Gray200),
+                                    ApplicationStylesDictionary.AppThemeBinding(Switch.ThumbColorProperty, ApplicationColorsDictionary.Primary, ApplicationColorsDictionary.White)
                                 }
                             },
                             new VisualState
                             {
                                 Name = "Off",
-                                Setters = { ApplicationStylesDictionary.AppThemeSetter(Switch.ThumbColorProperty, ApplicationColorsDictionary.Gray400, ApplicationColorsDictionary.Gray500) }
+                                Setters = { ApplicationStylesDictionary.AppThemeBinding(Switch.ThumbColorProperty, ApplicationColorsDictionary.Gray400, ApplicationColorsDictionary.Gray500) }
                             }
                         }
                     }

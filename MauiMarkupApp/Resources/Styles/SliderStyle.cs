@@ -6,9 +6,9 @@ public static class SliderStyle
     {
         Setters =
         {
-            ApplicationStylesDictionary.AppThemeSetter(Slider.MinimumTrackColorProperty, ApplicationColorsDictionary.Primary, ApplicationColorsDictionary.White),
-            ApplicationStylesDictionary.AppThemeSetter(Slider.MaximumTrackColorProperty, ApplicationColorsDictionary.Gray200, ApplicationColorsDictionary.Gray600),
-            ApplicationStylesDictionary.AppThemeSetter(Slider.ThumbColorProperty, ApplicationColorsDictionary.Primary, ApplicationColorsDictionary.White),
+            ApplicationStylesDictionary.AppThemeBinding(Slider.MinimumTrackColorProperty, ApplicationColorsDictionary.Primary, ApplicationColorsDictionary.White),
+            ApplicationStylesDictionary.AppThemeBinding(Slider.MaximumTrackColorProperty, ApplicationColorsDictionary.Gray200, ApplicationColorsDictionary.Gray600),
+            ApplicationStylesDictionary.AppThemeBinding(Slider.ThumbColorProperty, ApplicationColorsDictionary.Primary, ApplicationColorsDictionary.White),
             new Setter
             {
                 Property = VisualStateManager.VisualStateGroupsProperty,
@@ -25,9 +25,9 @@ public static class SliderStyle
                                 Name = "Disabled",
                                 Setters =
                                 {
-                                    ApplicationStylesDictionary.AppThemeSetter(Slider.MinimumTrackColorProperty, ApplicationColorsDictionary.Gray300, ApplicationColorsDictionary.Gray600),
-                                    ApplicationStylesDictionary.AppThemeSetter(Slider.MaximumTrackColorProperty, ApplicationColorsDictionary.Gray300, ApplicationColorsDictionary.Gray600),
-                                    ApplicationStylesDictionary.AppThemeSetter(Slider.ThumbColorProperty, ApplicationColorsDictionary.Gray300, ApplicationColorsDictionary.Gray600)
+                                    ApplicationStylesDictionary.AppThemeBinding(Slider.MinimumTrackColorProperty, ApplicationColorsDictionary.Gray300, ApplicationColorsDictionary.Gray600),
+                                    ApplicationStylesDictionary.AppThemeBinding(Slider.MaximumTrackColorProperty, ApplicationColorsDictionary.Gray300, ApplicationColorsDictionary.Gray600),
+                                    ApplicationStylesDictionary.AppThemeBinding(Slider.ThumbColorProperty, ApplicationColorsDictionary.Gray300, ApplicationColorsDictionary.Gray600)
                                 }
                             }
                         }

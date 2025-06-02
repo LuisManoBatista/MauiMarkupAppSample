@@ -6,11 +6,11 @@ public static class EditorStyle
     {
         Setters =
         {
-            ApplicationStylesDictionary.AppThemeSetter(Editor.TextColorProperty, ApplicationColorsDictionary.Black, ApplicationColorsDictionary.White),
+            ApplicationStylesDictionary.AppThemeBinding(Editor.TextColorProperty, ApplicationColorsDictionary.Black, ApplicationColorsDictionary.White),
             ApplicationStylesDictionary.SimpleSetter(VisualElement.BackgroundColorProperty, ApplicationColorsDictionary.Transparent),
             ApplicationStylesDictionary.SimpleSetter(Editor.FontFamilyProperty, "OpenSansRegular"),
             ApplicationStylesDictionary.SimpleSetter(Editor.FontSizeProperty, 14),
-            ApplicationStylesDictionary.AppThemeSetter(Editor.PlaceholderColorProperty, ApplicationColorsDictionary.Gray200, ApplicationColorsDictionary.Gray500),
+            ApplicationStylesDictionary.AppThemeBinding(Editor.PlaceholderColorProperty, ApplicationColorsDictionary.Gray200, ApplicationColorsDictionary.Gray500),
             ApplicationStylesDictionary.SimpleSetter(VisualElement.MinimumHeightRequestProperty, 44),
             ApplicationStylesDictionary.SimpleSetter(VisualElement.MinimumWidthRequestProperty, 44),
             new Setter
@@ -29,7 +29,7 @@ public static class EditorStyle
                                 Name = "Disabled",
                                 Setters =
                                 {
-                                    ApplicationStylesDictionary.AppThemeSetter(Editor.TextColorProperty, ApplicationColorsDictionary.Gray300, ApplicationColorsDictionary.Gray600)
+                                    ApplicationStylesDictionary.AppThemeBinding(Editor.TextColorProperty, ApplicationColorsDictionary.Gray300, ApplicationColorsDictionary.Gray600)
                                 }
                             }
                         }

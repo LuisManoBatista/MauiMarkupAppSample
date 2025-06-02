@@ -6,8 +6,8 @@ public static class ListViewStyle
     {
         Setters =
         {
-            ApplicationStylesDictionary.AppThemeSetter(ListView.SeparatorColorProperty, ApplicationColorsDictionary.Gray200, ApplicationColorsDictionary.Gray500),
-            ApplicationStylesDictionary.AppThemeSetter(ListView.RefreshControlColorProperty, ApplicationColorsDictionary.Gray900, ApplicationColorsDictionary.Gray200)
+            ApplicationStylesDictionary.AppThemeBinding(ListView.SeparatorColorProperty, ApplicationColorsDictionary.Gray200, ApplicationColorsDictionary.Gray500),
+            ApplicationStylesDictionary.AppThemeBinding(ListView.RefreshControlColorProperty, ApplicationColorsDictionary.Gray900, ApplicationColorsDictionary.Gray200)
         }
     };
 }

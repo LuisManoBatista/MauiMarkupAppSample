@@ -6,7 +6,7 @@ public static class DatePickerStyle
     {
         Setters =
         {
-            ApplicationStylesDictionary.AppThemeSetter(DatePicker.TextColorProperty, ApplicationColorsDictionary.Gray900, ApplicationColorsDictionary.White),
+            ApplicationStylesDictionary.AppThemeBinding(DatePicker.TextColorProperty, ApplicationColorsDictionary.Gray900, ApplicationColorsDictionary.White),
             ApplicationStylesDictionary.SimpleSetter(VisualElement.BackgroundColorProperty, ApplicationColorsDictionary.Transparent),
             ApplicationStylesDictionary.SimpleSetter(DatePicker.FontFamilyProperty, "OpenSansRegular"),
             ApplicationStylesDictionary.SimpleSetter(DatePicker.FontSizeProperty, 14),
@@ -28,7 +28,7 @@ public static class DatePickerStyle
                                 Name = "Disabled",
                                 Setters =
                                 {
-                                    ApplicationStylesDictionary.AppThemeSetter(DatePicker.TextColorProperty, ApplicationColorsDictionary.Gray200, ApplicationColorsDictionary.Gray500)
+                                    ApplicationStylesDictionary.AppThemeBinding(DatePicker.TextColorProperty, ApplicationColorsDictionary.Gray200, ApplicationColorsDictionary.Gray500)
                                 }
                             }
                         }

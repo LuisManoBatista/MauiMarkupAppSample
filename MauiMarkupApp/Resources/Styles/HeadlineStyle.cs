@@ -7,7 +7,7 @@ public static class HeadlineStyle
     {
         Setters =
         {
-            ApplicationStylesDictionary.AppThemeSetter(Label.TextColorProperty, ApplicationColorsDictionary.MidnightBlue, ApplicationColorsDictionary.White),
+            ApplicationStylesDictionary.AppThemeBinding(Label.TextColorProperty, ApplicationColorsDictionary.MidnightBlue, ApplicationColorsDictionary.White),
             ApplicationStylesDictionary.SimpleSetter(Label.FontSizeProperty, 32),
             ApplicationStylesDictionary.SimpleSetter(Label.HorizontalOptionsProperty, LayoutOptions.Center),
             ApplicationStylesDictionary.SimpleSetter(Label.HorizontalTextAlignmentProperty, TextAlignment.Center)

@@ -6,11 +6,11 @@ public static class EntryStyle
     {
         Setters =
         {
-            ApplicationStylesDictionary.AppThemeSetter(Entry.TextColorProperty, ApplicationColorsDictionary.Black, ApplicationColorsDictionary.White),
+            ApplicationStylesDictionary.AppThemeBinding(Entry.TextColorProperty, ApplicationColorsDictionary.Black, ApplicationColorsDictionary.White),
             ApplicationStylesDictionary.SimpleSetter(VisualElement.BackgroundColorProperty, ApplicationColorsDictionary.Transparent),
             ApplicationStylesDictionary.SimpleSetter(Entry.FontFamilyProperty, "OpenSansRegular"),
             ApplicationStylesDictionary.SimpleSetter(Entry.FontSizeProperty, 14),
-            ApplicationStylesDictionary.AppThemeSetter(Entry.PlaceholderColorProperty, ApplicationColorsDictionary.Gray200, ApplicationColorsDictionary.Gray500),
+            ApplicationStylesDictionary.AppThemeBinding(Entry.PlaceholderColorProperty, ApplicationColorsDictionary.Gray200, ApplicationColorsDictionary.Gray500),
             ApplicationStylesDictionary.SimpleSetter(VisualElement.MinimumHeightRequestProperty, 44),
             ApplicationStylesDictionary.SimpleSetter(VisualElement.MinimumWidthRequestProperty, 44),
             new Setter
@@ -29,7 +29,7 @@ public static class EntryStyle
                                 Name = "Disabled",
                                 Setters =
                                 {
-                                    ApplicationStylesDictionary.AppThemeSetter(Entry.TextColorProperty, ApplicationColorsDictionary.Gray300, ApplicationColorsDictionary.Gray600)
+                                    ApplicationStylesDictionary.AppThemeBinding(Entry.TextColorProperty, ApplicationColorsDictionary.Gray300, ApplicationColorsDictionary.Gray600)
                                 }
                             }
                         }

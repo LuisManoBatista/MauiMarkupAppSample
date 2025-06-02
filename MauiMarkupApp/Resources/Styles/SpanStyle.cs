@@ -6,7 +6,7 @@ public static class SpanStyle
     {
         Setters =
         {
-            ApplicationStylesDictionary.AppThemeSetter(Span.TextColorProperty, ApplicationColorsDictionary.Black, ApplicationColorsDictionary.White)
+            ApplicationStylesDictionary.AppThemeBinding(Span.TextColorProperty, ApplicationColorsDictionary.Black, ApplicationColorsDictionary.White)
         }
     };
 }

@@ -6,7 +6,7 @@ public static class SearchHandlerStyle
     {
         Setters =
         {
-            ApplicationStylesDictionary.AppThemeSetter(SearchHandler.TextColorProperty, ApplicationColorsDictionary.Gray900, ApplicationColorsDictionary.White),
+            ApplicationStylesDictionary.AppThemeBinding(SearchHandler.TextColorProperty, ApplicationColorsDictionary.Gray900, ApplicationColorsDictionary.White),
             ApplicationStylesDictionary.SimpleSetter(SearchHandler.PlaceholderColorProperty, ApplicationColorsDictionary.Gray500),
             ApplicationStylesDictionary.SimpleSetter(VisualElement.BackgroundColorProperty, ApplicationColorsDictionary.Transparent),
             ApplicationStylesDictionary.SimpleSetter(SearchHandler.FontFamilyProperty, "OpenSansRegular"),
@@ -27,8 +27,8 @@ public static class SearchHandlerStyle
                                 Name = "Disabled",
                                 Setters =
                                 {
-                                    ApplicationStylesDictionary.AppThemeSetter(SearchHandler.TextColorProperty, ApplicationColorsDictionary.Gray300, ApplicationColorsDictionary.Gray600),
-                                    ApplicationStylesDictionary.AppThemeSetter(SearchHandler.PlaceholderColorProperty, ApplicationColorsDictionary.Gray300, ApplicationColorsDictionary.Gray600)
+                                    ApplicationStylesDictionary.AppThemeBinding(SearchHandler.TextColorProperty, ApplicationColorsDictionary.Gray300, ApplicationColorsDictionary.Gray600),
+                                    ApplicationStylesDictionary.AppThemeBinding(SearchHandler.PlaceholderColorProperty, ApplicationColorsDictionary.Gray300, ApplicationColorsDictionary.Gray600)
                                 }
                             }
                         }

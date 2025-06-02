@@ -6,9 +6,9 @@ public static class NavigationPageStyle
     {
         Setters =
         {
-            ApplicationStylesDictionary.AppThemeSetter(NavigationPage.BarBackgroundColorProperty, ApplicationColorsDictionary.White, ApplicationColorsDictionary.OffBlack),
-            ApplicationStylesDictionary.AppThemeSetter(NavigationPage.BarTextColorProperty, ApplicationColorsDictionary.Gray200, ApplicationColorsDictionary.White),
-            ApplicationStylesDictionary.AppThemeSetter(NavigationPage.IconColorProperty, ApplicationColorsDictionary.Gray200, ApplicationColorsDictionary.White)
+            ApplicationStylesDictionary.AppThemeBinding(NavigationPage.BarBackgroundColorProperty, ApplicationColorsDictionary.White, ApplicationColorsDictionary.OffBlack),
+            ApplicationStylesDictionary.AppThemeBinding(NavigationPage.BarTextColorProperty, ApplicationColorsDictionary.Gray200, ApplicationColorsDictionary.White),
+            ApplicationStylesDictionary.AppThemeBinding(NavigationPage.IconColorProperty, ApplicationColorsDictionary.Gray200, ApplicationColorsDictionary.White)
         }
     };
 }

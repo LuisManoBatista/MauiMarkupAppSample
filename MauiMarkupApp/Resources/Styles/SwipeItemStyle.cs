@@ -4,6 +4,6 @@ public static class SwipeItemStyle
 {
     public static Style Create() => new(typeof(SwipeItem))
     {
-        Setters = { ApplicationStylesDictionary.AppThemeSetter(VisualElement.BackgroundColorProperty, ApplicationColorsDictionary.White, ApplicationColorsDictionary.Black) }
+        Setters = { ApplicationStylesDictionary.AppThemeBinding(VisualElement.BackgroundColorProperty, ApplicationColorsDictionary.White, ApplicationColorsDictionary.Black) }
     };
 }

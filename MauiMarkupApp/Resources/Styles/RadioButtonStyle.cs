@@ -7,7 +7,7 @@ public static class RadioButtonStyle
         Setters =
         {
             ApplicationStylesDictionary.SimpleSetter(VisualElement.BackgroundColorProperty, ApplicationColorsDictionary.Transparent),
-            ApplicationStylesDictionary.AppThemeSetter(RadioButton.TextColorProperty, ApplicationColorsDictionary.Black, ApplicationColorsDictionary.White),
+            ApplicationStylesDictionary.AppThemeBinding(RadioButton.TextColorProperty, ApplicationColorsDictionary.Black, ApplicationColorsDictionary.White),
             ApplicationStylesDictionary.SimpleSetter(RadioButton.FontFamilyProperty, "OpenSansRegular"),
             ApplicationStylesDictionary.SimpleSetter(RadioButton.FontSizeProperty, 14),
             ApplicationStylesDictionary.SimpleSetter(VisualElement.MinimumHeightRequestProperty, 44),
@@ -26,7 +26,7 @@ public static class RadioButtonStyle
                             new VisualState
                             {
                                 Name = "Disabled",
-                                Setters = { ApplicationStylesDictionary.AppThemeSetter(RadioButton.TextColorProperty, ApplicationColorsDictionary.Gray300, ApplicationColorsDictionary.Gray600) }
+                                Setters = { ApplicationStylesDictionary.AppThemeBinding(RadioButton.TextColorProperty, ApplicationColorsDictionary.Gray300, ApplicationColorsDictionary.Gray600) }
                             }
                         }
                     }

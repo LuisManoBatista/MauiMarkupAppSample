@@ -7,7 +7,7 @@ public static class SubHeadlineStyle
     {
         Setters =
         {
-            ApplicationStylesDictionary.AppThemeSetter(Label.TextColorProperty, ApplicationColorsDictionary.MidnightBlue, ApplicationColorsDictionary.White),
+            ApplicationStylesDictionary.AppThemeBinding(Label.TextColorProperty, ApplicationColorsDictionary.MidnightBlue, ApplicationColorsDictionary.White),
             ApplicationStylesDictionary.SimpleSetter(Label.FontSizeProperty, 24),
             ApplicationStylesDictionary.SimpleSetter(View.HorizontalOptionsProperty, LayoutOptions.Center),
             ApplicationStylesDictionary.SimpleSetter(Label.HorizontalTextAlignmentProperty, TextAlignment.Center)
