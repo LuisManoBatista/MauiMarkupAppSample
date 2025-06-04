@@ -1,9 +1,10 @@
+using CommunityToolkit.Maui.Markup;
+
 namespace MauiMarkupApp.Resources.Styles;
 
 public static class ActivityIndicatorStyle
 {
-    public static Style Create() => new(typeof(ActivityIndicator))
-    {
-        Setters = { ApplicationStylesDictionary.AppThemeBinding(ActivityIndicator.ColorProperty, ApplicationColorsDictionary.Primary, ApplicationColorsDictionary.White) }
-    };
+    public static Style Create() =>
+        new Style<ActivityIndicator>()
+            .AddAppThemeBinding(ActivityIndicator.ColorProperty, ApplicationColorsDictionary.Primary, ApplicationColorsDictionary.White);
 }

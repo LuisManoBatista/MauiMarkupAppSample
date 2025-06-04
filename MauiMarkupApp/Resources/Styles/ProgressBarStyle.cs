@@ -1,32 +1,18 @@
+using CommunityToolkit.Maui.Markup;
+using MauiMarkupApp.Resources.Styles.Extensions;
+
 namespace MauiMarkupApp.Resources.Styles;
 
 public static class ProgressBarStyle
 {
-    public static Style Create() => new(typeof(ProgressBar))
-    {
-        Setters =
-        {
-            ApplicationStylesDictionary.AppThemeBinding(ProgressBar.ProgressColorProperty, ApplicationColorsDictionary.Primary, ApplicationColorsDictionary.White),
-            new Setter
-            {
-                Property = VisualStateManager.VisualStateGroupsProperty,
-                Value = new VisualStateGroupList
+    public static Style Create() =>
+        new Style<ProgressBar>()
+            .AddAppThemeBinding(ProgressBar.ProgressColorProperty, ApplicationColorsDictionary.Primary, ApplicationColorsDictionary.White)
+            .AddVisualStateGroupList(groups =>
+                groups.AddItem("CommonStates", group =>
                 {
-                    new VisualStateGroup
-                    {
-                        Name = "CommonStates",
-                        States =
-                        {
-                            new VisualState { Name = "Normal" },
-                            new VisualState
-                            {
-                                Name = "Disabled",
-                                Setters = { ApplicationStylesDictionary.AppThemeBinding(ProgressBar.ProgressColorProperty, ApplicationColorsDictionary.Gray300, ApplicationColorsDictionary.Gray600) }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    };
+                    group.Add("Normal");
+                    group.Add("Disabled", state =>
+                        state.AddAppThemeBinding(ProgressBar.ProgressColorProperty, ApplicationColorsDictionary.Gray300, ApplicationColorsDictionary.Gray600));
+                }));
 }

@@ -1,40 +1,25 @@
+using CommunityToolkit.Maui.Markup;
+using MauiMarkupApp.Resources.Styles.Extensions;
+
 namespace MauiMarkupApp.Resources.Styles;
 
 public static class SearchHandlerStyle
 {
-    public static Style Create() => new(typeof(SearchHandler))
-    {
-        Setters =
-        {
-            ApplicationStylesDictionary.AppThemeBinding(SearchHandler.TextColorProperty, ApplicationColorsDictionary.Gray900, ApplicationColorsDictionary.White),
-            ApplicationStylesDictionary.SimpleSetter(SearchHandler.PlaceholderColorProperty, ApplicationColorsDictionary.Gray500),
-            ApplicationStylesDictionary.SimpleSetter(VisualElement.BackgroundColorProperty, ApplicationColorsDictionary.Transparent),
-            ApplicationStylesDictionary.SimpleSetter(SearchHandler.FontFamilyProperty, "OpenSansRegular"),
-            ApplicationStylesDictionary.SimpleSetter(SearchHandler.FontSizeProperty, 14),
-            new Setter
-            {
-                Property = VisualStateManager.VisualStateGroupsProperty,
-                Value = new VisualStateGroupList
+    public static Style Create() =>
+        new Style<SearchHandler>()
+            .AddAppThemeBinding(SearchHandler.TextColorProperty, ApplicationColorsDictionary.Gray900, ApplicationColorsDictionary.White)
+            .Add(SearchHandler.PlaceholderColorProperty, ApplicationColorsDictionary.Gray500)
+            .Add(VisualElement.BackgroundColorProperty, ApplicationColorsDictionary.Transparent)
+            .Add(SearchHandler.FontFamilyProperty, "OpenSansRegular")
+            .Add(SearchHandler.FontSizeProperty, 14)
+            .AddVisualStateGroupList(groups =>
+                groups.AddItem("CommonStates", group =>
                 {
-                    new VisualStateGroup
+                    group.Add("Normal");
+                    group.Add("Disabled", state =>
                     {
-                        Name = "CommonStates",
-                        States =
-                        {
-                            new VisualState { Name = "Normal" },
-                            new VisualState
-                            {
-                                Name = "Disabled",
-                                Setters =
-                                {
-                                    ApplicationStylesDictionary.AppThemeBinding(SearchHandler.TextColorProperty, ApplicationColorsDictionary.Gray300, ApplicationColorsDictionary.Gray600),
-                                    ApplicationStylesDictionary.AppThemeBinding(SearchHandler.PlaceholderColorProperty, ApplicationColorsDictionary.Gray300, ApplicationColorsDictionary.Gray600)
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    };
+                        state.AddAppThemeBinding(SearchHandler.TextColorProperty, ApplicationColorsDictionary.Gray300, ApplicationColorsDictionary.Gray600);
+                        state.AddAppThemeBinding(SearchHandler.PlaceholderColorProperty, ApplicationColorsDictionary.Gray300, ApplicationColorsDictionary.Gray600);
+                    });
+                }));
 }

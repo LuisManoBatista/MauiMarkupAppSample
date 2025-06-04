@@ -1,41 +1,24 @@
+using CommunityToolkit.Maui.Markup;
+using MauiMarkupApp.Resources.Styles.Extensions;
+
 namespace MauiMarkupApp.Resources.Styles;
 
 public static class EditorStyle
 {
-    public static Style Create() => new(typeof(Editor))
-    {
-        Setters =
-        {
-            ApplicationStylesDictionary.AppThemeBinding(Editor.TextColorProperty, ApplicationColorsDictionary.Black, ApplicationColorsDictionary.White),
-            ApplicationStylesDictionary.SimpleSetter(VisualElement.BackgroundColorProperty, ApplicationColorsDictionary.Transparent),
-            ApplicationStylesDictionary.SimpleSetter(Editor.FontFamilyProperty, "OpenSansRegular"),
-            ApplicationStylesDictionary.SimpleSetter(Editor.FontSizeProperty, 14),
-            ApplicationStylesDictionary.AppThemeBinding(Editor.PlaceholderColorProperty, ApplicationColorsDictionary.Gray200, ApplicationColorsDictionary.Gray500),
-            ApplicationStylesDictionary.SimpleSetter(VisualElement.MinimumHeightRequestProperty, 44),
-            ApplicationStylesDictionary.SimpleSetter(VisualElement.MinimumWidthRequestProperty, 44),
-            new Setter
-            {
-                Property = VisualStateManager.VisualStateGroupsProperty,
-                Value = new VisualStateGroupList
+    public static Style Create() =>
+        new Style<Editor>()
+            .AddAppThemeBinding(Editor.TextColorProperty, ApplicationColorsDictionary.Black, ApplicationColorsDictionary.White)
+            .AddAppThemeBinding(Editor.PlaceholderColorProperty, ApplicationColorsDictionary.Gray200, ApplicationColorsDictionary.Gray500)
+            .Add(VisualElement.BackgroundColorProperty, ApplicationColorsDictionary.Transparent)
+            .Add(Editor.FontFamilyProperty, "OpenSansRegular")
+            .Add(Editor.FontSizeProperty, 14)
+            .Add(VisualElement.MinimumHeightRequestProperty, 44)
+            .Add(VisualElement.MinimumWidthRequestProperty, 44)
+            .AddVisualStateGroupList(groups =>
+                groups.AddItem("CommonStates", group =>
                 {
-                    new VisualStateGroup
-                    {
-                        Name = "CommonStates",
-                        States =
-                        {
-                            new VisualState { Name = "Normal" },
-                            new VisualState
-                            {
-                                Name = "Disabled",
-                                Setters =
-                                {
-                                    ApplicationStylesDictionary.AppThemeBinding(Editor.TextColorProperty, ApplicationColorsDictionary.Gray300, ApplicationColorsDictionary.Gray600)
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    };
+                    group.Add("Normal");
+                    group.Add("Disabled", state =>
+                        state.AddAppThemeBinding(Editor.TextColorProperty, ApplicationColorsDictionary.Gray300, ApplicationColorsDictionary.Gray600));
+                }));
 }

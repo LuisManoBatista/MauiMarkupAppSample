@@ -1,9 +1,18 @@
 using CommunityToolkit.Maui;
+using CommunityToolkit.Maui.Markup;
 
 namespace MauiMarkupApp.Resources.Styles.Extensions;
 
 public static class VisualStateGroupListExtensions
 {
+    public static Style AddVisualStateGroupList<T>(this Style<T> style, Action<VisualStateGroupList> configure ) where T : BindableObject
+    {
+        var groupList = new VisualStateGroupList();
+        configure?.Invoke(groupList);
+        style.Add(VisualStateManager.VisualStateGroupsProperty, groupList);
+        return style;
+    }
+
     public static VisualStateGroupList AddItem(this VisualStateGroupList list, string groupName, Action<VisualStateGroup> configure)
     {
         var group = new VisualStateGroup { Name = groupName };

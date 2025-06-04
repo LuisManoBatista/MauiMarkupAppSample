@@ -1,40 +1,23 @@
+using CommunityToolkit.Maui.Markup;
+using MauiMarkupApp.Resources.Styles.Extensions;
+
 namespace MauiMarkupApp.Resources.Styles;
 
 public static class DatePickerStyle
 {
-    public static Style Create() => new(typeof(DatePicker))
-    {
-        Setters =
-        {
-            ApplicationStylesDictionary.AppThemeBinding(DatePicker.TextColorProperty, ApplicationColorsDictionary.Gray900, ApplicationColorsDictionary.White),
-            ApplicationStylesDictionary.SimpleSetter(VisualElement.BackgroundColorProperty, ApplicationColorsDictionary.Transparent),
-            ApplicationStylesDictionary.SimpleSetter(DatePicker.FontFamilyProperty, "OpenSansRegular"),
-            ApplicationStylesDictionary.SimpleSetter(DatePicker.FontSizeProperty, 14),
-            ApplicationStylesDictionary.SimpleSetter(VisualElement.MinimumHeightRequestProperty, 44),
-            ApplicationStylesDictionary.SimpleSetter(VisualElement.MinimumWidthRequestProperty, 44),
-            new Setter
-            {
-                Property = VisualStateManager.VisualStateGroupsProperty,
-                Value = new VisualStateGroupList
+    public static Style Create() =>
+        new Style<DatePicker>()
+            .AddAppThemeBinding(DatePicker.TextColorProperty, ApplicationColorsDictionary.Gray900, ApplicationColorsDictionary.White)
+            .Add(VisualElement.BackgroundColorProperty, ApplicationColorsDictionary.Transparent)
+            .Add(DatePicker.FontFamilyProperty, "OpenSansRegular")
+            .Add(DatePicker.FontSizeProperty, 14)
+            .Add(VisualElement.MinimumHeightRequestProperty, 44)
+            .Add(VisualElement.MinimumWidthRequestProperty, 44)
+            .AddVisualStateGroupList(groups => 
+                groups.AddItem("CommonStates", group =>
                 {
-                    new VisualStateGroup
-                    {
-                        Name = "CommonStates",
-                        States =
-                        {
-                            new VisualState { Name = "Normal" },
-                            new VisualState
-                            {
-                                Name = "Disabled",
-                                Setters =
-                                {
-                                    ApplicationStylesDictionary.AppThemeBinding(DatePicker.TextColorProperty, ApplicationColorsDictionary.Gray200, ApplicationColorsDictionary.Gray500)
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    };
+                    group.Add("Normal");
+                    group.Add("Disabled", state =>
+                        state.AddAppThemeBinding(DatePicker.TextColorProperty, ApplicationColorsDictionary.Gray200, ApplicationColorsDictionary.Gray500));
+                }));
 }

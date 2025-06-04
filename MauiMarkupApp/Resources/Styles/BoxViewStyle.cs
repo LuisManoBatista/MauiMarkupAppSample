@@ -1,9 +1,10 @@
+using CommunityToolkit.Maui.Markup;
+
 namespace MauiMarkupApp.Resources.Styles;
 
 public static class BoxViewStyle
 {
-    public static Style Create() => new(typeof(BoxView))
-    {
-        Setters = { ApplicationStylesDictionary.AppThemeBinding(VisualElement.BackgroundColorProperty, ApplicationColorsDictionary.Gray950, ApplicationColorsDictionary.Gray200) }
-    };
+    public static Style Create() =>
+        new Style<BoxView>()
+            .AddAppThemeBinding(VisualElement.BackgroundColorProperty, ApplicationColorsDictionary.Gray950, ApplicationColorsDictionary.Gray200);
 }

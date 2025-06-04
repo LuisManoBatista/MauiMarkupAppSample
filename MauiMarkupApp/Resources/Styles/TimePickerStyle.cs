@@ -13,11 +13,12 @@ public static class TimePickerStyle
             .Add(TimePicker.FontSizeProperty, 14)
             .Add(VisualElement.MinimumHeightRequestProperty, 44)
             .Add(VisualElement.MinimumWidthRequestProperty, 44)
-            .Add(VisualStateManager.VisualStateGroupsProperty,
-                new VisualStateGroupList()
-                    .AddItem("CommonStates", (x) => x
-                        .Add("Normal")
-                        .Add("Disabled", s => s
-                            .AddAppThemeBinding(Button.TextColorProperty, ApplicationColorsDictionary.Gray300, ApplicationColorsDictionary.Gray600) )
-                        .Add("PointerOver")));
- }
+            .AddVisualStateGroupList(groups =>
+                groups.AddItem("CommonStates", group =>
+                {
+                    group.Add("Normal");
+                    group.Add("Disabled", state => 
+                        state.AddAppThemeBinding(Button.TextColorProperty, ApplicationColorsDictionary.Gray300, ApplicationColorsDictionary.Gray600));
+                    group.Add("PointerOver");
+                }));
+}

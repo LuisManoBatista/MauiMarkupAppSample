@@ -1,9 +1,10 @@
+using CommunityToolkit.Maui.Markup;
+
 namespace MauiMarkupApp.Resources.Styles;
 
 public static class SwipeItemStyle
 {
-    public static Style Create() => new(typeof(SwipeItem))
-    {
-        Setters = { ApplicationStylesDictionary.AppThemeBinding(VisualElement.BackgroundColorProperty, ApplicationColorsDictionary.White, ApplicationColorsDictionary.Black) }
-    };
+    public static Style Create() =>
+        new Style<SwipeItem>()
+            .AddAppThemeBinding(VisualElement.BackgroundColorProperty, ApplicationColorsDictionary.White, ApplicationColorsDictionary.Black);
 }

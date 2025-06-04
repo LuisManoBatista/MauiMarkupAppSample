@@ -1,37 +1,23 @@
+using CommunityToolkit.Maui.Markup;
+using MauiMarkupApp.Resources.Styles.Extensions;
+
 namespace MauiMarkupApp.Resources.Styles;
 
 public static class RadioButtonStyle
 {
-    public static Style Create() => new(typeof(RadioButton))
-    {
-        Setters =
-        {
-            ApplicationStylesDictionary.SimpleSetter(VisualElement.BackgroundColorProperty, ApplicationColorsDictionary.Transparent),
-            ApplicationStylesDictionary.AppThemeBinding(RadioButton.TextColorProperty, ApplicationColorsDictionary.Black, ApplicationColorsDictionary.White),
-            ApplicationStylesDictionary.SimpleSetter(RadioButton.FontFamilyProperty, "OpenSansRegular"),
-            ApplicationStylesDictionary.SimpleSetter(RadioButton.FontSizeProperty, 14),
-            ApplicationStylesDictionary.SimpleSetter(VisualElement.MinimumHeightRequestProperty, 44),
-            ApplicationStylesDictionary.SimpleSetter(VisualElement.MinimumWidthRequestProperty, 44),
-            new Setter
-            {
-                Property = VisualStateManager.VisualStateGroupsProperty,
-                Value = new VisualStateGroupList
+    public static Style Create() =>
+        new Style<RadioButton>()
+            .AddAppThemeBinding(RadioButton.TextColorProperty, ApplicationColorsDictionary.Black, ApplicationColorsDictionary.White)
+            .Add(VisualElement.BackgroundColorProperty, ApplicationColorsDictionary.Transparent)
+            .Add(RadioButton.FontFamilyProperty, "OpenSansRegular")
+            .Add(RadioButton.FontSizeProperty, 14)
+            .Add(VisualElement.MinimumHeightRequestProperty, 44)
+            .Add(VisualElement.MinimumWidthRequestProperty, 44)
+            .AddVisualStateGroupList(groups =>
+                groups.AddItem("CommonStates", group =>
                 {
-                    new VisualStateGroup
-                    {
-                        Name = "CommonStates",
-                        States =
-                        {
-                            new VisualState { Name = "Normal" },
-                            new VisualState
-                            {
-                                Name = "Disabled",
-                                Setters = { ApplicationStylesDictionary.AppThemeBinding(RadioButton.TextColorProperty, ApplicationColorsDictionary.Gray300, ApplicationColorsDictionary.Gray600) }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    };
+                    group.Add("Normal");
+                    group.Add("Disabled", state =>
+                        state.AddAppThemeBinding(RadioButton.TextColorProperty, ApplicationColorsDictionary.Gray300, ApplicationColorsDictionary.Gray600));
+                }));
 }

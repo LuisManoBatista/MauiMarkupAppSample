@@ -1,13 +1,11 @@
+using CommunityToolkit.Maui.Markup;
+
 namespace MauiMarkupApp.Resources.Styles;
 
 public static class IndicatorViewStyle
 {
-    public static Style Create() => new(typeof(IndicatorView))
-    {
-        Setters =
-        {
-            ApplicationStylesDictionary.AppThemeBinding(IndicatorView.IndicatorColorProperty, ApplicationColorsDictionary.Gray200, ApplicationColorsDictionary.Gray500),
-            ApplicationStylesDictionary.AppThemeBinding(IndicatorView.SelectedIndicatorColorProperty, ApplicationColorsDictionary.Gray950, ApplicationColorsDictionary.Gray100)
-        }
-    };
+    public static Style Create() =>
+        new Style<IndicatorView>()
+            .AddAppThemeBinding(IndicatorView.IndicatorColorProperty, ApplicationColorsDictionary.Gray200, ApplicationColorsDictionary.Gray500)
+            .AddAppThemeBinding(IndicatorView.SelectedIndicatorColorProperty, ApplicationColorsDictionary.Gray950, ApplicationColorsDictionary.Gray100);
 }
